@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,17 +21,30 @@ public class ChiTietSanPham {
 	@JoinColumn(name="masanpham")
 	SanPham sanpham;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="masize")
-	SizeSanPham sizesanpham;
+	SizeSanPham sizesanpham; 
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="mamau")
 	MauSanPham mausanpham;
 	
 	int soluong;
 	Date ngaynhap;
-	
+	String hinh1;
+	String hinh2;
+	public String getHinh1() {
+		return hinh1;
+	}
+	public void setHinh1(String hinh1) {
+		this.hinh1 = hinh1;
+	}
+	public String getHinh2() {
+		return hinh2;
+	}
+	public void setHinh2(String hinh2) {
+		this.hinh2 = hinh2;
+	}
 	public int getMachitietsanpham() {
 		return machitietsanpham;
 	}

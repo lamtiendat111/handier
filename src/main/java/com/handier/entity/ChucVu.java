@@ -9,14 +9,12 @@ import javax.persistence.Id;
 public class ChucVu {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int machucvu;
+	String machucvu;
 	String tenchucvu;
-
-	
-	public int getMachucvu() {
+	public String getMachucvu() {
 		return machucvu;
 	}
-	public void setMachucvu(int machucvu) {
+	public void setMachucvu(String machucvu) {
 		this.machucvu = machucvu;
 	}
 	public String getTenchucvu() {

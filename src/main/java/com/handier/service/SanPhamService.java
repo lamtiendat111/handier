@@ -23,9 +23,26 @@ public class SanPhamService implements SanPhamImp {
 		return sanPhamDao.printAll();
 	}
 
-	public List<SanPham> phanTrang(int soluong, int trang,int sapxep,String category) {
+	public List<SanPham> phanTrang(int soluong, int trang,int sapxep,String category,String sale) {
 		
-		return sanPhamDao.phanTrang(soluong, trang,sapxep,category);
+		return sanPhamDao.phanTrang(soluong, trang,sapxep,category, sale);
+	}
+
+	@Override
+	public List<SanPham> findSanPhamOfDanhMuc(int maDanhMuc) {
+		return sanPhamDao.findSanPhamOfDanhMuc(maDanhMuc);
+	}
+
+	@Override
+	public SanPham findSanPhamOfId(int masanpham) {
+		
+		return sanPhamDao.findSanPhamOfId(masanpham);
+	}
+
+	@Override
+	public SanPham findSanPhamOfName(String name) {
+		
+		return sanPhamDao.findSanPhamOfName(name);
 	}
 	
 	

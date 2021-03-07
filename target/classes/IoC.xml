@@ -36,6 +36,7 @@
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
+	
 	<!--end ket noi database -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -47,8 +48,15 @@
               <prop key="hibernate.show_sql">true</prop>
            </props>
 		</property>
-	</bean>
+	</bean >
+	<!-- updatefile -->
+	<bean id="multipartResolver"
+    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="268435456" />
+  </bean>
+ 
 
+  <!--end updatefile -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 	<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>

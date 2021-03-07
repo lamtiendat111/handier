@@ -4,11 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 
+@SuppressWarnings("serial")
 @Embeddable
 public class ChiTietHoaDonId implements Serializable{
 	
 	int mahoadon;
 	int machitietsanpham;
+	
+	
 	
 	public int getMahoadon() {
 		return mahoadon;

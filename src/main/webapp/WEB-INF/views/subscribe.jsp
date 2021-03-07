@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-</section>
+
 <!--subscribe-address-->
-<section class="subscribe">
+<section class="subscribe wow rubberBand" data-wow-duration="2s">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 map-info-right px-0">
@@ -65,3 +65,114 @@
 	</div>
 </section>
 <!--//subscribe-->
+   <!-- Modal 1-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="register-form">
+                        <form action="j_spring_security_check?title=${title}" method="post">
+                            <div class="fields-grid">
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Your Name" name="username" required>
+                                </div>
+                                <div class="styled-input">
+                                    <input type="password" placeholder="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn subscrib-btnn">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" data-toggle="modal"
+									data-target="#exampleModal1">
+									<span class="far">Đăng ký</span>
+								</button>
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Đăng Ký</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="register-form">
+                        <form name="myForm" onsubmit="return validateForm()" method="post">
+                            <div class="fields-grid">
+                                <div class="styled-input">
+                                    <input type="text" placeholder="Tài khoản đăng nhập" name="username" required>
+                                </div>
+                                <div class="styled-input">
+                                    <input type="password" placeholder="mật khẩu" name="password" required>
+                                </div>
+                                <div class="controls">
+												<input class="billing-address-name form-control" type="text"
+													name="name" placeholder="Full name" value="${pageContext['request'].userPrincipal.principal.fullname}">
+											</div>
+											<div class="card_number_grids">
+												<div class="card_number_grid_left">
+													<div class="controls">
+														<input class="form-control" type="text"
+															placeholder="Mobile number" value="${pageContext['request'].userPrincipal.principal.phone}">
+													</div>
+												</div>
+												<div class="card_number_grid_right">
+													<div class="controls">
+														<input class="form-control" type="email"
+															placeholder="Email" value="${pageContext['request'].userPrincipal.principal.email}">
+													</div>
+												</div>
+												<div class="clear"></div>
+											</div>
+											<div class="controls">
+												<input class="form-control" type="text"
+													placeholder="Address" value="${pageContext['request'].userPrincipal.principal.diachi}">
+											</div>
+                                <button type="submit" class="btn subscrib-btnn">Đăng ký</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="1267637840068759">
+      </div>
+    <!-- //Modal 1-->

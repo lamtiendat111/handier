@@ -14,9 +14,9 @@ public class DanhMucSanPhamService implements  DanhMucSanPhamImp {
 	@Autowired
 	DanhMucSanPhamDao danhMucSanPhamDao;
 	
-	public List<DanhMucSanPham> showAll() {
+	public List<DanhMucSanPham> showAllDanhMuc() {
 	
-		return danhMucSanPhamDao.showAll();
+		return danhMucSanPhamDao.showAllDanhMuc();
 	}
 	
 	

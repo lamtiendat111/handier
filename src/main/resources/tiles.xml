@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="base"
+		template="/WEB-INF/views/Layout/defaultLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="head" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/header.jsp" />
+
+		<put-attribute name="body" value="" />
+		<put-attribute name="subscribe"
+			value="/WEB-INF/views/subscribe.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/footer.jsp" />
+		<put-attribute name="script-custom" value="" />
+	</definition>
+	
+	<!-- Home -->
+	<definition name="base-home"
+		template="/WEB-INF/views/Layout/defaultHome.jsp">
+		
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="head"
+			value="/WEB-INF/views/Head-Footer-Custom/head-trangchu.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="body1"
+			value="/WEB-INF/views/about.jsp" />
+			<put-attribute name="body"
+			value="" />
+		<put-attribute name="subscribe"
+			value="/WEB-INF/views/subscribe.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/footer.jsp" />
+	</definition>
+		<definition name="trangchu" extends="base-home">
+	<put-attribute name="body"
+			value="/WEB-INF/views/trangchu.jsp" />
+	</definition>
+		<!-- Home -->
+		
+			<!-- Admin -->
+	<definition name="base-admin"
+		template="/WEB-INF/views/Layout/defaultAdmin.jsp">
+		
+		<put-attribute name="title" value="Admin" />
+		<put-attribute name="head"
+			value="/WEB-INF/views/Admin/head.jsp" />
+		<put-attribute name="navbar"
+			value="/WEB-INF/views/Admin/navbar.jsp" />
+		<put-attribute name="sidebar"
+			value="/WEB-INF/views/Admin/sidebar.jsp" />
+			<put-attribute name="body"
+			value="" />
+		
+		<put-attribute name="footer"
+			value="/WEB-INF/views/Admin/footer.jsp" />
+	</definition>
+	
+	
+	<definition name="body" extends="base-admin">
+	<put-attribute name="body"
+			value="/WEB-INF/views/Admin/body.jsp" />
+	</definition>
+	<!-- Admin -->
+	
+	<!-- Admin-product -->
+	<definition name="body-admin-product" extends="base-admin">
+	<put-attribute name="body"
+			value="/WEB-INF/views/Admin/product/body_product.jsp" />
+	</definition>
+		<!--end Admin-product -->
+
+	<!-- Admin-list-category-product -->
+	<definition name="body-admin-list-category-product" extends="base-admin">
+	<put-attribute name="body"
+			value="/WEB-INF/views/Admin/product/list_category_product.jsp" />
+	</definition>
+		<!--end Admin-list-category-product -->
+
+	<definition name="welcomePage" extends="base">
+		<put-attribute name="title" value="Welcome123" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/welcomePage.jsp" />
+	</definition>
+
+	<!-- Contact -->
+	<definition name="contact" extends="base">
+		<put-attribute name="title" value="Contact" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/contact.jsp" />
+	</definition>
+	<!-- Contact -->
+
+	<!-- about -->
+	<definition name="about" extends="base">
+		<put-attribute name="title" value="About Us" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/about.jsp" />
+	</definition>
+	<!-- about -->
+
+	<!-- Check Out -->
+	<definition name="checkout" extends="base">
+		<put-attribute name="title" value="Check Out" />
+		<put-attribute name="head"
+			value="/WEB-INF/views/Head-Footer-Custom/head-checkout.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/checkout.jsp" />
+		<put-attribute name="script-custom"
+			value="/WEB-INF/views/Head-Footer-Custom/Script-checkout.jsp" />
+	</definition>
+	<!-- Check Out -->
+
+	<!-- Product -->
+	<definition name="product" extends="base">
+		<put-attribute name="title" value="Product" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product.jsp" />
+		<put-attribute name="script-custom"
+			value="/WEB-INF/views/Head-Footer-Custom/Script-product.jsp" />
+	</definition>
+	<!-- Product -->
+	<!-- Login -->
+	<definition name="loginPage" extends="base">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/loginPage.jsp" />
+		
+	</definition>
+	<!-- Login -->
+	<!-- single -->
+	<definition name="single" extends="base">
+		<put-attribute name="title" value="Product" />
+		<put-attribute name="head"
+			value="/WEB-INF/views/Head-Footer-Custom/head-single.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/single.jsp" />
+		<put-attribute name="script-custom"
+			value="/WEB-INF/views/Head-Footer-Custom/Script-single.jsp" />
+	</definition>
+	<!-- single -->
+
+	<!-- service -->
+	<definition name="service" extends="base">
+		<put-attribute name="title" value="Size Chart" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/service.jsp" />
+	</definition>
+	<!-- service -->
+
+	<!-- shop -->
+	<definition name="shop" extends="base">
+		<put-attribute name="title" value="Shop Now" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/shop.jsp" />
+		<put-attribute name="script-custom"
+			value="/WEB-INF/views/Head-Footer-Custom/Script-shop.jsp" />
+	</definition>
+	<!-- shop -->
+
+</tiles-definitions>  

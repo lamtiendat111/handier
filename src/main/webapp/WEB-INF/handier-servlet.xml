@@ -22,21 +22,20 @@
 		http://www.springframework.org/schema/task https://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<context:component-scan	base-package="com.handier" />
-		
+	<mvc:annotation-driven />
+	<context:component-scan
+		base-package="com.handier" />
+
 	<mvc:resources location="/resource/"
 		mapping="/resource/**" />
 	<mvc:annotation-driven
 		enable-matrix-variables="true" />
+	<context:annotation-config />
 
 	<import resource="classpath:IoC.xml" />
+	<import resource="classpath:tiles.xml" />
 	<!-- rut ngan duong dan / va duoi .jsp -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>
 	
-
+	
 </beans>
 

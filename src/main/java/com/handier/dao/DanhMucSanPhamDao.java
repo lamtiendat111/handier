@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.handier.entity.DanhMucSanPham;
 import com.handier.imp.DanhMucSanPhamImp;
@@ -19,8 +18,9 @@ import com.handier.imp.DanhMucSanPhamImp;
 public class DanhMucSanPhamDao implements DanhMucSanPhamImp {
 	@Autowired
 	SessionFactory sessionFactory;
+	@SuppressWarnings("unchecked")
 	@Transactional
-	public List<DanhMucSanPham> showAll() {
+	public List<DanhMucSanPham> showAllDanhMuc() {
 		Session session = sessionFactory.getCurrentSession();
 		return session.createQuery("from danhmucsanpham").getResultList();
 	}

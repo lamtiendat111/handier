@@ -13,17 +13,31 @@ public class NhanVien {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int manhanvien;
-	String hoten;
-	String diachi;
-	String cmnd;
+	private int manhanvien;
+	private String hoten;
+	private String diachi;
+	private int phone;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="machucvu")
-	ChucVu chucvu;
+	private ChucVu chucvu;
 	
-	String email;
-	String tendangnhap;
-	String matkhau;
+	private String email;
+	private String tendangnhap;
+	private String matkhau;
+	private boolean enabled;
+	private int Point;
+	public int getPoint() {
+		return Point;
+	}
+	public void setPoint(int point) {
+		Point = point;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 	
 	public int getManhanvien() {
 		return manhanvien;
@@ -43,11 +57,11 @@ public class NhanVien {
 	public void setDiachi(String diachi) {
 		this.diachi = diachi;
 	}
-	public String getCmnd() {
-		return cmnd;
+	public int getPhone() {
+		return phone;
 	}
-	public void setCmnd(String cmnd) {
-		this.cmnd = cmnd;
+	public void setPhone(int cmnd) {
+		this.phone = cmnd;
 	}
 	public ChucVu getChucvu() {
 		return chucvu;
@@ -73,7 +87,21 @@ public class NhanVien {
 	public void setMatkhau(String matkhau) {
 		this.matkhau = matkhau;
 	}
-	
-	
+	public NhanVien(int manhanvien, String hoten, String diachi, int phone, ChucVu chucvu, String email,
+			String tendangnhap, String matkhau, boolean enabled) {
+		super();
+		this.manhanvien = manhanvien;
+		this.hoten = hoten;
+		this.diachi = diachi;
+		this.phone = phone;
+		this.chucvu = chucvu;
+		this.email = email;
+		this.tendangnhap = tendangnhap;
+		this.matkhau = matkhau;
+		this.enabled = enabled;
+	}
+	public NhanVien() {
+		super();
+	}
 	
 }
