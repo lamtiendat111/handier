@@ -107,7 +107,7 @@
 								id="dropdownMenuButton" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">Lọc theo Category</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="/admin/product">All</a> 
+								<a class="dropdown-item" href="/admin/product/">All</a> 
 								<c:forEach items="${danhmucs }" var="danhmuc">
 <a	class="dropdown-item" href="../../admin/product/${danhmuc.getMadanhmuc() }">${danhmuc.getTendanhmuc() }</a> 
 									
@@ -155,7 +155,7 @@
 										<td><img src="blank.gif" data-src='<c:url value="/resource/images/${sanpham.getHinhsanpham()} "/>'
 												class="img-thumbnail lazy" alt="" style="width: 25%!important;"></td>
 										<td class="project-actions text-right">
-											<a	class="btn btn-info btn-sm"		href="dashboard.php?page=typeOfVirus/edit&id=<?= $virus['id_virus'] ?>">
+											<a	class="btn btn-info btn-sm"		href="../editproduct/${sanpham.getMasanpham() }	">
 												<i class="fas fa-pencil-alt"> </i> Edit
 											</a>
 											<input class="btn btn-danger btn-sm delete1 fas fa-trash"

@@ -70,6 +70,12 @@
 	<put-attribute name="body"
 			value="/WEB-INF/views/Admin/product/body_product.jsp" />
 	</definition>
+	
+	<!-- Admin-edit-product -->
+	<definition name="body-admin-edit-product" extends="base-admin">
+	<put-attribute name="body"
+			value="/WEB-INF/views/Admin/product/edit_product.jsp" />
+	</definition>
 		<!--end Admin-product -->
 
 	<!-- Admin-list-category-product -->

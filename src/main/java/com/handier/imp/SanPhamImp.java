@@ -11,4 +11,5 @@ public interface SanPhamImp {
 	public List<SanPham> findSanPhamOfDanhMuc(int maDanhMuc);
 	public SanPham findSanPhamOfId(int masanpham);
 	public SanPham findSanPhamOfName(String name);
+	
 }

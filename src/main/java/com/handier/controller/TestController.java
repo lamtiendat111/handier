@@ -2,6 +2,7 @@ package com.handier.controller;
 
 import java.security.Principal;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ public class TestController {
 	       model.addAttribute("message", "This is welcome page!");
 	       return "defaultLayout";
 	   }
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	   @RequestMapping(value = "/admin", method = RequestMethod.GET)
 	   public String adminPage(Model model) {
 	       return "body";

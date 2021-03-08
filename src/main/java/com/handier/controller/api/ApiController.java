@@ -1,4 +1,4 @@
-package com.handier.controller;
+package com.handier.controller.api;
 
 import java.util.HashMap;
 import java.util.List;
