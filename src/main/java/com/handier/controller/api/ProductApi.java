@@ -20,7 +20,7 @@ public class ProductApi {
 	SanPhamService sanphamService;
 	
 	@SuppressWarnings("unchecked")
-	@GetMapping("search")
+	@GetMapping("/checkNameProduct")
 	@ResponseBody
 	public Boolean checkNameProduct(@RequestParam String name) {
 

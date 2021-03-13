@@ -51,7 +51,7 @@ public class SanPhamDao implements SanPhamImp {
 			trang = totalPage;
 		}
 		int start = (trang - 1) * soluong;
-		String queryString = "select s from sanpham s ";
+		String queryString = "select s from sanpham s join fetch s.danhsachkhuyenmai d  ";
 		String sqlcategory = "";
 		if (!category.equals("all")) {
 			sqlcategory = " where s.danhmucsanpham.madanhmuc = :category ";
@@ -60,16 +60,16 @@ public class SanPhamDao implements SanPhamImp {
 		 
 		}
 		if(sale.equals("sale") & category.equals("all") ) {
-			sqlcategory = "inner join s.danhmucsanpham ds right join fetch s.danhsachkhuyenmai d    where d.makhuyenmai IS NOT NULL ";
+			sqlcategory = "inner join fetch s.danhmucsanpham ds right join fetch s.danhsachkhuyenmai d    where d.makhuyenmai IS NOT NULL ";
 
 		}
 		else if(sale.equals("sale") & !category.equals("all")) {
-			sqlcategory = "inner join s.danhmucsanpham ds right join fetch s.danhsachkhuyenmai d    where ds.madanhmuc = :category and d.makhuyenmai IS NOT NULL ";
+			sqlcategory = "inner join fetch s.danhmucsanpham ds right join fetch s.danhsachkhuyenmai d    where ds.madanhmuc = :category and d.makhuyenmai IS NOT NULL ";
 			
 		}
 
 		if (sapxep == 0) {
-			queryString = "select s  from sanpham s " + sqlcategory;
+			queryString = "select s  from sanpham s join fetch s.danhsachkhuyenmai d " + sqlcategory;
 		} else if (sapxep == 1) {
 			queryString = "select s  from sanpham s " + sqlcategory + " ORDER BY s.giatien asc";
 		} else if (sapxep == 2) {

@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
@@ -15,13 +16,13 @@ import javax.persistence.OneToOne;
 public class ChiTietHoaDon implements Serializable {
 	@EmbeddedId
 	ChiTietHoaDonId chiTietHoaDonId;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="manhanvien")
 	NhanVien nhanvien;
 	int soluong;
 	String giatien;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "manguoidung", referencedColumnName = "manhanvien")
 	NhanVien nguoidung;
 	int tinhtrang;

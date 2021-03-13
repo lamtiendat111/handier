@@ -67,7 +67,7 @@ public class SanPham {
 		this.hinhsanpham = hinhsanpham;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name = "masanpham")
 	Set<ChiTietSanPham> chitietsanpham;
 
@@ -85,7 +85,7 @@ public class SanPham {
 		this.hinhsanphams = hinhsanphams;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name = "masanpham")				
 	Set<HinhSanPham> hinhsanphams;
 
@@ -101,7 +101,7 @@ public class SanPham {
 		this.hinhsanpham = hinhsanpham;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinTable(name = "chitietkhuyenmai", joinColumns = {
 			@JoinColumn(name = "masanpham", referencedColumnName = "masanpham") }, inverseJoinColumns = {
 					@JoinColumn(name = "makhuyenmai", referencedColumnName = "makhuyenmai") })

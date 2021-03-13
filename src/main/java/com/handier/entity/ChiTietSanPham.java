@@ -17,15 +17,15 @@ public class ChiTietSanPham {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int machitietsanpham;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="masanpham")
 	SanPham sanpham;
 	
-	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="masize")
 	SizeSanPham sizesanpham; 
 	
-	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="mamau")
 	MauSanPham mausanpham;
 	
